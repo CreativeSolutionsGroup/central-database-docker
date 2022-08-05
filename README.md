@@ -1,6 +1,8 @@
 ```
 #.env
 MONGODB_ADDR=
+MONGODB_ROOT_PASSWORD=
+POSTGRES_ROOT_PASSWORD=
 ```
 
 All you need to do is run `docker compose up`.

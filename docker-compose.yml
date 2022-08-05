@@ -7,14 +7,14 @@ services:
   mongo-express:
     image: mongo-express
     environment:
-      - ME_CONFIG_MONGODB_SERVER=${MONGODB_ADDR}
-      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_SERVER: ${MONGODB_ADDR}
+      - ME_CONFIG_MONGODB_PORT: 27017
   mongodb-central:
     image: mongo:latest
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: 
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD}
     ports:
       - 27017:27017
     volumes:
@@ -28,7 +28,7 @@ services:
       - postgres-central:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: root
-      POSTGRES_PASSWORD:
+      POSTGRES_PASSWORD: ${POSTGRES_ROOT_PASSWORD}
 
 volumes:
   mongodb_data_container:
