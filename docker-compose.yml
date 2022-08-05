@@ -4,6 +4,11 @@ services:
     restart: always
     ports:
       - 10005:8080
+  mongo-express:
+    image: mongo-express
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=${MONGODB_ADDR}
+      - ME_CONFIG_MONGODB_PORT=27017
   mongodb-central:
     image: mongo:latest
     restart: always
