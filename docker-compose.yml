@@ -1,4 +1,9 @@
 services:
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 10005:8080
   mongodb-central:
     image: mongo:latest
     restart: always
