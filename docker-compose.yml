@@ -9,7 +9,7 @@ services:
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: y89eQ86Rv9LDQiRHdz9XzwgDCw2KxN
+      MONGO_INITDB_ROOT_PASSWORD: 
     ports:
       - 27017:27017
     volumes:
@@ -23,7 +23,7 @@ services:
       - postgres-central:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: root
-      POSTGRES_PASSWORD: y89eQ86Rv9LDQiRHdz9XzwgDCw2KxN
+      POSTGRES_PASSWORD:
 
 volumes:
   mongodb_data_container:
