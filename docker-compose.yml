@@ -1,0 +1,23 @@
+services:
+  mongodb-central:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: y89eQ86Rv9LDQiRHdz9XzwgDCw2KxN
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+  postgres-central:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - postgres-central:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: y89eQ86Rv9LDQiRHdz9XzwgDCw2KxN
+
+volumes:
+  mongodb_data_container:
+  postgres-central:
