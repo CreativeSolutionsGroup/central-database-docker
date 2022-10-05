@@ -1,4 +1,12 @@
 services:
+  redis-kiosk:
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+    command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_KIOSK_PASS}
+    volumes:
+      - kiosk-cache:/data
   adminer:
     image: adminer
     restart: always
@@ -39,3 +47,4 @@ services:
 volumes:
   mongodb_data_container:
   postgres-central:
+  kiosk-cache:
