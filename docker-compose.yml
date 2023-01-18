@@ -24,11 +24,13 @@ services:
     ports:
       - 10006:8081
   mongodb-central:
-    image: mongo:latest
+    image: bitnami/mongodb:latest
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD}
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_ROOT_USER: root
+      MONGODB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD}
+      MONGODB_REPLICA_SET_KEY: replicasetkey123
     ports:
       - 27017:27017
     volumes:
